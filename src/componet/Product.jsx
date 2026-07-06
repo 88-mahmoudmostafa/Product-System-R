@@ -18,7 +18,7 @@ const [search,setCearch]=useState('')
 useEffect(()=>{
   localStorage.setItem('products',JSON.stringify(products))
 },[products])
-
+// total
    const total=Number(price)+Number(ads||0)+Number(txet||0)-Number(discount||0)
     // save
     const saveclick=(e)=>{
@@ -55,6 +55,7 @@ useEffect(()=>{
        
        }
     }
+    // update
      const update=(p)=>{
        setAds(p.ads)
        setName(p.name)
@@ -68,12 +69,12 @@ useEffect(()=>{
      })
        
      }
-    
+    // delete
      const dalete=(id)=>{
       setProducts(products.filter(p=>(p.id !==id)))
      }
      
-
+      // filter
        const  filterproducts=
        products.filter(p=>
         p.name.toLowerCase().includes(search.toLowerCase())
